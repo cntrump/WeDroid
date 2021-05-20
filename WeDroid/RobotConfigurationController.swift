@@ -79,6 +79,10 @@ class RobotConfigurationController: RBViewController {
             NSLayoutConstraint(item: urlTextField, attribute: .right, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .right, multiplier: 1, constant: -20),
             NSLayoutConstraint(item: urlTextField, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 35)
         ])
+
+        if robotItem == nil {
+            nameTextfield.becomeFirstResponder()
+        }
     }
 
     @objc func saveAction(_: Any) {

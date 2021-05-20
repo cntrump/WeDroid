@@ -15,12 +15,18 @@ struct ErrModel: Decodable {
 class PostViewController: RBViewController {
     let sendBarButtonItem = UIBarButtonItem(image: UIImage(named: "send_item"), style: .plain, target: self, action: #selector(sendAction(_:)))
     var robotItem: RobotItem?
+    lazy var textViewBottomConstraint = NSLayoutConstraint(item: textView, attribute: .bottom,
+                                                           relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0)
 
     lazy var textView: UITextView = {
-        let textView = UITextView()
+        let textView = UITextView(frame: view.bounds)
 
         return textView
     }()
+
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIApplication.keyboardWillChangeFrameNotification, object: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +41,12 @@ class PostViewController: RBViewController {
         NSLayoutConstraint.activate([
             NSLayoutConstraint(item: textView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: 0),
             NSLayoutConstraint(item: textView, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 0),
-            NSLayoutConstraint(item: textView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0),
+            textViewBottomConstraint,
             NSLayoutConstraint(item: textView, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: 0)
         ])
 
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardFrameWillChangeAction(_:)),
+                                               name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         textView.becomeFirstResponder()
     }
 
@@ -112,5 +120,22 @@ class PostViewController: RBViewController {
         let alert = UIAlertController(title: title, message: errmsg, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("好的", comment: ""), style: .default))
         present(alert, animated: true)
+    }
+}
+
+extension PostViewController {
+    @objc func keyboardFrameWillChangeAction(_ notification: Notification) {
+        guard let userInfo = notification.userInfo else {
+            return
+        }
+
+        let kbinfo = KeyboardUserInfo(userInfo: userInfo)
+        let rect = view.convert(kbinfo.frameEnd, from: nil)
+        textViewBottomConstraint.constant = -rect.height
+        textView.setNeedsUpdateConstraints()
+
+        kbinfo.animate { [weak self] in
+            self?.view.layoutIfNeeded()
+        }
     }
 }

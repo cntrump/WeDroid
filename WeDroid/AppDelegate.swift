@@ -41,6 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     @available(iOS 13.0, *)
     override func buildMenu(with builder: UIMenuBuilder) {
+        builder.remove(menu: .file)
         builder.remove(menu: .edit)
         builder.remove(menu: .format)
         builder.remove(menu: .view)

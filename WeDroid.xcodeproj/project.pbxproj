@@ -18,6 +18,7 @@
 		1582FB002654E55D0097083A /* RobotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582FAFF2654E55D0097083A /* RobotCell.swift */; };
 		1582FB032654F00B0097083A /* RobotConfigurationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582FB022654F00B0097083A /* RobotConfigurationController.swift */; };
 		1582FB05265522BD0097083A /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582FB04265522BD0097083A /* PostViewController.swift */; };
+		158672882656A07400748234 /* KeyboardUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158672872656A07400748234 /* KeyboardUserInfo.swift */; };
 		1593489E2655D1F900286BC3 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1593489D2655D1F900286BC3 /* Storage.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		1582FAFF2654E55D0097083A /* RobotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotCell.swift; sourceTree = "<group>"; };
 		1582FB022654F00B0097083A /* RobotConfigurationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotConfigurationController.swift; sourceTree = "<group>"; };
 		1582FB04265522BD0097083A /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		158672872656A07400748234 /* KeyboardUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardUserInfo.swift; sourceTree = "<group>"; };
 		1593489D2655D1F900286BC3 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		15F4501A26564D6500FE8145 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +82,7 @@
 				1582FAFD2654E0890097083A /* RobotListViewController.swift */,
 				1582FAEA2654DE3C0097083A /* SceneDelegate.swift */,
 				1593489D2655D1F900286BC3 /* Storage.swift */,
+				158672872656A07400748234 /* KeyboardUserInfo.swift */,
 				1582FAF12654DE3D0097083A /* Assets.xcassets */,
 				1582FB012654EF7D0097083A /* Supporting Files */,
 			);
@@ -176,6 +179,7 @@
 				15334C9E2655690B0075512F /* RobotItem.swift in Sources */,
 				15334CA026556A190075512F /* RBViewController.swift in Sources */,
 				1593489E2655D1F900286BC3 /* Storage.swift in Sources */,
+				158672882656A07400748234 /* KeyboardUserInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
