@@ -324,6 +324,7 @@
 				CODE_SIGN_ENTITLEMENTS = "WeDroid/Supporting Files/WeDroid.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = J29VN6AP39;
 				INFOPLIST_FILE = "WeDroid/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -347,6 +348,7 @@
 				CODE_SIGN_ENTITLEMENTS = "WeDroid/Supporting Files/WeDroid.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = J29VN6AP39;
 				INFOPLIST_FILE = "WeDroid/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
