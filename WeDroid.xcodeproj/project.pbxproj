@@ -1,0 +1,387 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		15334C9E2655690B0075512F /* RobotItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15334C9D2655690B0075512F /* RobotItem.swift */; };
+		15334CA026556A190075512F /* RBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15334C9F26556A190075512F /* RBViewController.swift */; };
+		1582FAE92654DE3C0097083A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582FAE82654DE3C0097083A /* AppDelegate.swift */; };
+		1582FAEB2654DE3C0097083A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582FAEA2654DE3C0097083A /* SceneDelegate.swift */; };
+		1582FAED2654DE3C0097083A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582FAEC2654DE3C0097083A /* MainViewController.swift */; };
+		1582FAF22654DE3D0097083A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1582FAF12654DE3D0097083A /* Assets.xcassets */; };
+		1582FAF52654DE3D0097083A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1582FAF32654DE3D0097083A /* LaunchScreen.storyboard */; };
+		1582FAFE2654E0890097083A /* RobotListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582FAFD2654E0890097083A /* RobotListViewController.swift */; };
+		1582FB002654E55D0097083A /* RobotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582FAFF2654E55D0097083A /* RobotCell.swift */; };
+		1582FB032654F00B0097083A /* RobotConfigurationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582FB022654F00B0097083A /* RobotConfigurationController.swift */; };
+		1582FB05265522BD0097083A /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582FB04265522BD0097083A /* PostViewController.swift */; };
+		1593489E2655D1F900286BC3 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1593489D2655D1F900286BC3 /* Storage.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		15334C9D2655690B0075512F /* RobotItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotItem.swift; sourceTree = "<group>"; };
+		15334C9F26556A190075512F /* RBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBViewController.swift; sourceTree = "<group>"; };
+		1582FAE52654DE3C0097083A /* WeDroid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeDroid.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1582FAE82654DE3C0097083A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1582FAEA2654DE3C0097083A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1582FAEC2654DE3C0097083A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1582FAF12654DE3D0097083A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1582FAF42654DE3D0097083A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1582FAF62654DE3D0097083A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1582FAFC2654DE500097083A /* WeDroid.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeDroid.entitlements; sourceTree = "<group>"; };
+		1582FAFD2654E0890097083A /* RobotListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotListViewController.swift; sourceTree = "<group>"; };
+		1582FAFF2654E55D0097083A /* RobotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotCell.swift; sourceTree = "<group>"; };
+		1582FB022654F00B0097083A /* RobotConfigurationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotConfigurationController.swift; sourceTree = "<group>"; };
+		1582FB04265522BD0097083A /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		1593489D2655D1F900286BC3 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		15F4501A26564D6500FE8145 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1582FAE22654DE3C0097083A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1582FADC2654DE3C0097083A = {
+			isa = PBXGroup;
+			children = (
+				1582FAE72654DE3C0097083A /* WeDroid */,
+				1582FAE62654DE3C0097083A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1582FAE62654DE3C0097083A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1582FAE52654DE3C0097083A /* WeDroid.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1582FAE72654DE3C0097083A /* WeDroid */ = {
+			isa = PBXGroup;
+			children = (
+				1582FAE82654DE3C0097083A /* AppDelegate.swift */,
+				1582FAEC2654DE3C0097083A /* MainViewController.swift */,
+				1582FB04265522BD0097083A /* PostViewController.swift */,
+				15334C9F26556A190075512F /* RBViewController.swift */,
+				1582FAFF2654E55D0097083A /* RobotCell.swift */,
+				1582FB022654F00B0097083A /* RobotConfigurationController.swift */,
+				15334C9D2655690B0075512F /* RobotItem.swift */,
+				1582FAFD2654E0890097083A /* RobotListViewController.swift */,
+				1582FAEA2654DE3C0097083A /* SceneDelegate.swift */,
+				1593489D2655D1F900286BC3 /* Storage.swift */,
+				1582FAF12654DE3D0097083A /* Assets.xcassets */,
+				1582FB012654EF7D0097083A /* Supporting Files */,
+			);
+			path = WeDroid;
+			sourceTree = "<group>";
+		};
+		1582FB012654EF7D0097083A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1582FAF32654DE3D0097083A /* LaunchScreen.storyboard */,
+				1582FAFC2654DE500097083A /* WeDroid.entitlements */,
+				1582FAF62654DE3D0097083A /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1582FAE42654DE3C0097083A /* WeDroid */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1582FAF92654DE3D0097083A /* Build configuration list for PBXNativeTarget "WeDroid" */;
+			buildPhases = (
+				1582FAE12654DE3C0097083A /* Sources */,
+				1582FAE22654DE3C0097083A /* Frameworks */,
+				1582FAE32654DE3C0097083A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WeDroid;
+			productName = WeDroid;
+			productReference = 1582FAE52654DE3C0097083A /* WeDroid.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1582FADD2654DE3C0097083A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					1582FAE42654DE3C0097083A = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = 1582FAE02654DE3C0097083A /* Build configuration list for PBXProject "WeDroid" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = 1582FADC2654DE3C0097083A;
+			productRefGroup = 1582FAE62654DE3C0097083A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1582FAE42654DE3C0097083A /* WeDroid */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1582FAE32654DE3C0097083A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1582FAF52654DE3D0097083A /* LaunchScreen.storyboard in Resources */,
+				1582FAF22654DE3D0097083A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1582FAE12654DE3C0097083A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1582FB002654E55D0097083A /* RobotCell.swift in Sources */,
+				1582FB032654F00B0097083A /* RobotConfigurationController.swift in Sources */,
+				1582FB05265522BD0097083A /* PostViewController.swift in Sources */,
+				1582FAED2654DE3C0097083A /* MainViewController.swift in Sources */,
+				1582FAE92654DE3C0097083A /* AppDelegate.swift in Sources */,
+				1582FAFE2654E0890097083A /* RobotListViewController.swift in Sources */,
+				1582FAEB2654DE3C0097083A /* SceneDelegate.swift in Sources */,
+				15334C9E2655690B0075512F /* RobotItem.swift in Sources */,
+				15334CA026556A190075512F /* RBViewController.swift in Sources */,
+				1593489E2655D1F900286BC3 /* Storage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1582FAF32654DE3D0097083A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1582FAF42654DE3D0097083A /* Base */,
+				15F4501A26564D6500FE8145 /* zh-Hans */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1582FAF72654DE3D0097083A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1582FAF82654DE3D0097083A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1582FAFA2654DE3D0097083A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "WeDroid/Supporting Files/WeDroid.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J29VN6AP39;
+				INFOPLIST_FILE = "WeDroid/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.unnoo.WeDroid;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1582FAFB2654DE3D0097083A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "WeDroid/Supporting Files/WeDroid.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J29VN6AP39;
+				INFOPLIST_FILE = "WeDroid/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.unnoo.WeDroid;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1582FAE02654DE3C0097083A /* Build configuration list for PBXProject "WeDroid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1582FAF72654DE3D0097083A /* Debug */,
+				1582FAF82654DE3D0097083A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1582FAF92654DE3D0097083A /* Build configuration list for PBXNativeTarget "WeDroid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1582FAFA2654DE3D0097083A /* Debug */,
+				1582FAFB2654DE3D0097083A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1582FADD2654DE3C0097083A /* Project object */;
+}
