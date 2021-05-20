@@ -49,6 +49,12 @@ class RoboListViewController: RBViewController {
         }
     }
 
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+
+        listView.collectionViewLayout.invalidateLayout()
+    }
+
     @objc func addRoboAction(_: Any) {
         let vc = RobotConfigurationController()
         vc.completionHandler = { [weak self] (item) in
