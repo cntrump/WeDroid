@@ -8,7 +8,7 @@
 import UIKit
 
 class MDPreprocessor {
-    private lazy var autolinkRegexpr = try? NSRegularExpression(pattern: "((https|http)://)((\\w|-)+)(([.]|[/])((\\w|-)+))+",
+    private lazy var autolinkRegexpr = try? NSRegularExpression(pattern: "(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]",
                                                                 options: .caseInsensitive)
     var text: String
 
