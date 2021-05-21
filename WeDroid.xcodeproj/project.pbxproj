@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		15334C9E2655690B0075512F /* RobotItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15334C9D2655690B0075512F /* RobotItem.swift */; };
 		15334CA026556A190075512F /* RBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15334C9F26556A190075512F /* RBViewController.swift */; };
+		154104BF2657796E00BD032D /* MDPreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154104BE2657796E00BD032D /* MDPreprocessor.swift */; };
 		1582FAE92654DE3C0097083A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582FAE82654DE3C0097083A /* AppDelegate.swift */; };
 		1582FAEB2654DE3C0097083A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582FAEA2654DE3C0097083A /* SceneDelegate.swift */; };
 		1582FAED2654DE3C0097083A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582FAEC2654DE3C0097083A /* MainViewController.swift */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		15334C9D2655690B0075512F /* RobotItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotItem.swift; sourceTree = "<group>"; };
 		15334C9F26556A190075512F /* RBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBViewController.swift; sourceTree = "<group>"; };
+		154104BE2657796E00BD032D /* MDPreprocessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPreprocessor.swift; sourceTree = "<group>"; };
 		1582FAE52654DE3C0097083A /* WeDroid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeDroid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1582FAE82654DE3C0097083A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1582FAEA2654DE3C0097083A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				1582FAFD2654E0890097083A /* RobotListViewController.swift */,
 				1582FAEA2654DE3C0097083A /* SceneDelegate.swift */,
 				1593489D2655D1F900286BC3 /* Storage.swift */,
+				154104BE2657796E00BD032D /* MDPreprocessor.swift */,
 				158672872656A07400748234 /* KeyboardUserInfo.swift */,
 				1582FAF12654DE3D0097083A /* Assets.xcassets */,
 				1582FB012654EF7D0097083A /* Supporting Files */,
@@ -176,6 +179,7 @@
 				1582FAE92654DE3C0097083A /* AppDelegate.swift in Sources */,
 				1582FAFE2654E0890097083A /* RobotListViewController.swift in Sources */,
 				1582FAEB2654DE3C0097083A /* SceneDelegate.swift in Sources */,
+				154104BF2657796E00BD032D /* MDPreprocessor.swift in Sources */,
 				15334C9E2655690B0075512F /* RobotItem.swift in Sources */,
 				15334CA026556A190075512F /* RBViewController.swift in Sources */,
 				1593489E2655D1F900286BC3 /* Storage.swift in Sources */,

@@ -51,11 +51,13 @@ class PostViewController: RBViewController {
     }
 
     @objc func sendAction(_: Any) {
-        guard let url = robotItem?.url, let text = textView.text, text.count > 0 else {
+        guard let url = robotItem?.url, var text = textView.text, text.count > 0 else {
             return
         }
 
         sendBarButtonItem.isEnabled = false
+
+        text = MDPreprocessor(text: text).process()
 
         var body = [String: Any]()
         var md = [String: Any]()
