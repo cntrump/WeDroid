@@ -10,6 +10,8 @@ import UIKit
 class RoboListViewController: RBViewController {
     var roboList = [RobotItem]()
 
+    lazy var emptyView = UIImageView(image: UIImage(named: "empty_item"))
+
     lazy var listView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 16
@@ -28,6 +30,13 @@ class RoboListViewController: RBViewController {
         super.viewDidLoad()
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addRoboAction(_:)))
+
+        view.addSubview(emptyView)
+        emptyView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: emptyView, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: emptyView, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0)
+        ])
 
         view.addSubview(listView)
         listView.translatesAutoresizingMaskIntoConstraints = false
@@ -114,7 +123,10 @@ class RoboListViewController: RBViewController {
 extension RoboListViewController: UICollectionViewDelegateFlowLayout,
                                   UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return roboList.count
+        let count = roboList.count
+        emptyView.isHidden = count > 0
+
+        return count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
