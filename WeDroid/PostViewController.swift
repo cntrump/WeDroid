@@ -8,8 +8,35 @@
 import UIKit
 
 struct ErrModel: Decodable {
-    var errcode: Int
+    var errcode: Int?
     var errmsg: String?
+
+    var code: Int?
+    var msg: String?
+
+    func getCode() -> Int {
+        if let code = code {
+            return code
+        }
+
+        if let code = errcode {
+            return code
+        }
+
+        return 0
+    }
+
+    func getMsg() -> String? {
+        if let msg = msg {
+            return msg
+        }
+
+        if let msg = errmsg {
+            return msg
+        }
+
+        return nil
+    }
 }
 
 class PostViewController: RBViewController {
@@ -51,7 +78,7 @@ class PostViewController: RBViewController {
     }
 
     @objc func sendAction(_: Any) {
-        guard let url = robotItem?.url, var text = textView.text, text.count > 0 else {
+        guard var text = textView.text, text.count > 0 else {
             return
         }
 
@@ -59,24 +86,10 @@ class PostViewController: RBViewController {
 
         text = MDPreprocessor(text: text).process()
 
-        var body = [String: Any]()
-        var md = [String: Any]()
-        md["content"] = text
-
-        body["msgtype"] = "markdown"
-        body["markdown"] = md
-
-        guard JSONSerialization.isValidJSONObject(body),
-              let httpBody = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted) else {
+        guard let request = robotItem?.request(withText: text) else {
             sendBarButtonItem.isEnabled = true
             return
         }
-
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("\(httpBody.count)", forHTTPHeaderField: "Content-Length")
-        request.httpBody = httpBody
 
         let task = URLSession.shared.dataTask(with: request) { [weak self] (data, response, error) in
                     DispatchQueue.main.async {
@@ -88,7 +101,7 @@ class PostViewController: RBViewController {
                         } else {
                             if let data = data,
                                let errModel = try? JSONDecoder().decode(ErrModel.self, from: data) {
-                                if errModel.errcode == 0 {
+                                if errModel.getCode() == 0 {
                                     self?.showSuccess()
                                 } else {
                                     self?.showError(errModel)
@@ -114,7 +127,7 @@ class PostViewController: RBViewController {
     }
 
     func showError(_ err: ErrModel) {
-        guard err.errcode != 0, let errmsg = err.errmsg else {
+        guard err.getCode() != 0, let errmsg = err.getMsg() else {
             return
         }
 

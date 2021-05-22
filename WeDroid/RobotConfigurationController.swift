@@ -47,6 +47,7 @@ class RobotConfigurationController: RBViewController {
 
     lazy var nameTextfield = RBTextField()
     lazy var urlTextField = RBTextField()
+    lazy var signTextField = RBTextField()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,17 +68,28 @@ class RobotConfigurationController: RBViewController {
             NSLayoutConstraint(item: nameTextfield, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 35)
         ])
 
-        urlTextField.placeholder = NSLocalizedString("机器人的 URL", comment: "")
+        urlTextField.placeholder = NSLocalizedString("机器人的 URL（企业微信、飞书和钉钉）", comment: "")
         urlTextField.textColor = .link
         urlTextField.text = robotItem?.url.absoluteString
         view.addSubview(urlTextField)
-
         urlTextField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             NSLayoutConstraint(item: urlTextField, attribute: .top, relatedBy: .equal, toItem: nameTextfield, attribute: .bottom, multiplier: 1, constant: 20),
             NSLayoutConstraint(item: urlTextField, attribute: .left, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .left, multiplier: 1, constant: 20),
             NSLayoutConstraint(item: urlTextField, attribute: .right, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .right, multiplier: 1, constant: -20),
             NSLayoutConstraint(item: urlTextField, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 35)
+        ])
+
+        signTextField.placeholder = NSLocalizedString("机器人的 Token （开启签名验证时需要）", comment: "")
+        signTextField.textColor = .gray
+        signTextField.text = robotItem?.token
+        view.addSubview(signTextField)
+        signTextField.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: signTextField, attribute: .top, relatedBy: .equal, toItem: urlTextField, attribute: .bottom, multiplier: 1, constant: 20),
+            NSLayoutConstraint(item: signTextField, attribute: .left, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .left, multiplier: 1, constant: 20),
+            NSLayoutConstraint(item: signTextField, attribute: .right, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .right, multiplier: 1, constant: -20),
+            NSLayoutConstraint(item: signTextField, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 35)
         ])
 
         if robotItem == nil {
@@ -87,7 +99,9 @@ class RobotConfigurationController: RBViewController {
 
     @objc func saveAction(_: Any) {
         defer {
-            navigationController?.popViewController(animated: true)
+            if presentedViewController == nil {
+                navigationController?.popViewController(animated: true)
+            }
         }
 
         guard var urlString = urlTextField.text else {
@@ -104,12 +118,29 @@ class RobotConfigurationController: RBViewController {
             return
         }
 
+        guard let host = url.host,
+              (host.hasSuffix(.lark) || host.hasSuffix(.dingtalk) || host.hasSuffix(.wechat)) else {
+            let alert = UIAlertController(title: NSLocalizedString("暂不支持的机器人（\(url.host!)）", comment: ""),
+                                          message: """
+                                            企业微信机器人：\(String.wechat)
+                                            飞书机器人：\(String.lark)
+                                            钉钉机器人：\(String.dingtalk)
+                                            """,
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("好的", comment: ""), style: .default))
+            self.present(alert, animated: true)
+
+            return
+        }
+
         if robotItem == nil {
             robotItem = RobotItem(name: name, url: url)
         } else {
             robotItem?.name = name
             robotItem?.url = url
         }
+
+        robotItem?.token = signTextField.text
 
         robotItem?.save()
         completionHandler?(robotItem!)

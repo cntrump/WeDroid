@@ -46,6 +46,8 @@ class MDPreprocessor {
             }
         }
 
+        string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+
         return String(string)
     }
 }

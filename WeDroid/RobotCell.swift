@@ -22,7 +22,14 @@ class RobotCell: UICollectionViewCell {
     lazy var urlLabel: UILabel = {
         let label = UILabel()
         label.font = .preferredFont(forTextStyle: .footnote)
-        label.textColor = .link
+        label.textColor = .link.withAlphaComponent(0.75)
+
+        return label
+    }()
+
+    lazy var appLabel: UILabel = {
+        let label = UILabel()
+        label.font = .preferredFont(forTextStyle: .footnote)
 
         return label
     }()
@@ -59,13 +66,20 @@ class RobotCell: UICollectionViewCell {
             NSLayoutConstraint(item: nameLabel, attribute: .right, relatedBy: .equal, toItem: contentView, attribute: .right, multiplier: 1, constant: -64)
         ])
 
+        contentView.addSubview(appLabel)
+        appLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: appLabel, attribute: .top, relatedBy: .equal, toItem: nameLabel, attribute: .bottom, multiplier: 1, constant: 8),
+            NSLayoutConstraint(item: appLabel, attribute: .left, relatedBy: .equal, toItem: contentView, attribute: .left, multiplier: 1, constant: 24),
+            NSLayoutConstraint(item: appLabel, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1, constant: -16)
+        ])
+
         contentView.addSubview(urlLabel)
         urlLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            NSLayoutConstraint(item: urlLabel, attribute: .top, relatedBy: .equal, toItem: nameLabel, attribute: .bottom, multiplier: 1, constant: 8),
-            NSLayoutConstraint(item: urlLabel, attribute: .left, relatedBy: .equal, toItem: contentView, attribute: .left, multiplier: 1, constant: 24),
-            NSLayoutConstraint(item: urlLabel, attribute: .right, relatedBy: .equal, toItem: contentView, attribute: .right, multiplier: 1, constant: -64),
-            NSLayoutConstraint(item: urlLabel, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1, constant: -16)
+            NSLayoutConstraint(item: urlLabel, attribute: .centerY, relatedBy: .equal, toItem: appLabel, attribute: .centerY, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: urlLabel, attribute: .left, relatedBy: .equal, toItem: appLabel, attribute: .right, multiplier: 1, constant: 8),
+            NSLayoutConstraint(item: urlLabel, attribute: .right, relatedBy: .equal, toItem: contentView, attribute: .right, multiplier: 1, constant: -64)
         ])
 
         moreButton.addTarget(self, action: #selector(moreAction(_:)), for: .touchUpInside)
@@ -86,6 +100,8 @@ class RobotCell: UICollectionViewCell {
     func update(item: RobotItem) {
         self.item = item
         nameLabel.text = item.name
+        appLabel.text = item.appName
+        appLabel.textColor = item.appNameColor
         urlLabel.text = item.url.absoluteString
     }
 
