@@ -82,7 +82,7 @@ extension RobotItem {
             let string = "\(timestamp)" + "\n" + token
             signature = Data(HMAC<SHA256>.authenticationCode(for: string.data(using: .utf8)!, using: key))
         } else if host.hasSuffix(.lark) {
-            let string = "\(timestamp / 1000)" + "\n" + token
+            let string = "\(timestamp)" + "\n" + token
             let key = SymmetricKey(data: string.data(using: .utf8)!)
             signature = Data(HMAC<SHA256>.authenticationCode(for: Data(), using: key))
         }
@@ -90,34 +90,48 @@ extension RobotItem {
         return signature?.base64EncodedString(options: .lineLength64Characters)
     }
 
+    private var isValidHost: Bool {
+        guard let host = url.host else {
+            return false
+        }
+
+        return host.hasSuffix(.lark) ||
+            host.hasSuffix(.dingtalk) ||
+            host.hasSuffix(.wechat)
+    }
+
     func request(withText text: String) -> URLRequest? {
-        guard var uc = URLComponents(url: url, resolvingAgainstBaseURL: false), let host = uc.host else {
+        guard var uc = URLComponents(url: url, resolvingAgainstBaseURL: false),
+              let host = uc.host,
+              isValidHost else {
             return nil
         }
 
-        let timestamp = Int(Date().timeIntervalSince1970 * 1000.0)
+
         var body = [String: Any]()
 
-        if let signature = genSign(withTimestamp: timestamp) {
-            if host.hasSuffix(.dingtalk) {
-                var queryItems = uc.queryItems
-                queryItems?.append(URLQueryItem(name: "timestamp", value: "\(timestamp)"))
-                queryItems?.append(URLQueryItem(name: "sign", value: signature))
-                uc.queryItems = queryItems
-                body["msgtype"] = "markdown"
-                body["markdown"] = [
-                    "title": text.prefix(16),
-                    "text": text
-                ]
-            } else if host.hasSuffix(.lark) {
-                body["timestamp"] = "\(timestamp / 1000)"
-                body["sign"] = signature
-                body["msg_type"] = "text"
-                body["content"] = [
-                    "text": text
-                ]
-            }
-        } else {
+        if host.hasSuffix(.dingtalk) {
+            let timestamp = Int(Date().timeIntervalSince1970 * 1000.0)
+            let signature = genSign(withTimestamp: timestamp)
+            var queryItems = uc.queryItems
+            queryItems?.append(URLQueryItem(name: "timestamp", value: "\(timestamp)"))
+            queryItems?.append(URLQueryItem(name: "sign", value: signature))
+            uc.queryItems = queryItems
+            body["msgtype"] = "markdown"
+            body["markdown"] = [
+                "title": text.prefix(16),
+                "text": text
+            ]
+        } else if host.hasSuffix(.lark) {
+            let timestamp = Int(Date().timeIntervalSince1970)
+            let signature = genSign(withTimestamp: timestamp)
+            body["timestamp"] = "\(timestamp)"
+            body["sign"] = signature
+            body["msg_type"] = "text"
+            body["content"] = [
+                "text": text
+            ]
+        } else if host.hasSuffix(.wechat) {
             body["msgtype"] = "markdown"
             body["markdown"] = [
                 "content": text

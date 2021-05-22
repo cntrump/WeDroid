@@ -120,11 +120,12 @@ class RobotConfigurationController: RBViewController {
 
         guard let host = url.host,
               (host.hasSuffix(.lark) || host.hasSuffix(.dingtalk) || host.hasSuffix(.wechat)) else {
-            let alert = UIAlertController(title: NSLocalizedString("暂不支持的机器人（\(url.host!)）", comment: ""),
+            let alert = UIAlertController(title: NSLocalizedString("暂不支持的机器人链接", comment: ""),
                                           message: """
-                                            企业微信机器人：\(String.wechat)
-                                            飞书机器人：\(String.lark)
-                                            钉钉机器人：\(String.dingtalk)
+                                            目前支持以下机器人：
+                                            - 企业微信机器人：\(String.wechat)
+                                            - 飞书机器人：\(String.lark)
+                                            - 钉钉机器人：\(String.dingtalk)
                                             """,
                                           preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("好的", comment: ""), style: .default))
