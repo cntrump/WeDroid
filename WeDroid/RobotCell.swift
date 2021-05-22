@@ -22,7 +22,7 @@ class RobotCell: UICollectionViewCell {
     lazy var urlLabel: UILabel = {
         let label = UILabel()
         label.font = .preferredFont(forTextStyle: .footnote)
-        label.textColor = .link.withAlphaComponent(0.75)
+        label.textColor = .link.withAlphaComponent(0.8)
 
         return label
     }()
@@ -66,6 +66,7 @@ class RobotCell: UICollectionViewCell {
             NSLayoutConstraint(item: nameLabel, attribute: .right, relatedBy: .equal, toItem: contentView, attribute: .right, multiplier: 1, constant: -64)
         ])
 
+        appLabel.setContentHuggingPriority(.required, for: .horizontal)
         contentView.addSubview(appLabel)
         appLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

@@ -140,7 +140,7 @@ extension RoboListViewController: UICollectionViewDelegateFlowLayout,
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.bounds.width - 32
+        let width = collectionView.bounds.width - collectionView.safeAreaInsets.left - collectionView.safeAreaInsets.right - 32
         let targetSize = CGSize(width: width, height: 1000000000)
 
         var size = RobotCell.systemLayoutSizeFitting(targetSize, robotItem: roboList[indexPath.row])

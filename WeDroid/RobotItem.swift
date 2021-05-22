@@ -191,7 +191,7 @@ extension RobotItem {
         }
 
         if host.hasSuffix(.wechat) {
-            color = .systemBlue
+            color = .systemIndigo
         }
 
         return color
